@@ -10,14 +10,14 @@ const Footer = () => {
           return (
             <FooterSocialContainer key={index}>
               <a href={image.link} target="_blank">
-                <svg
+                <FooterSocialSvg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
                 >
                   <path d={image.source} />
-                </svg>
+                </FooterSocialSvg>
               </a>
             </FooterSocialContainer>
           );
@@ -51,10 +51,14 @@ const FooterSocialContainer = styled.div`
   width: 100%;
   display: flex;
   margin: 0 5px;
-  fill: white;
-`;
+  `;
 
 const FooterCopyright = styled.div`
   font-family: "blender_probook";
   color: white;
-`;
+  `;
+
+const FooterSocialSvg = styled.svg`
+fill: white;
+
+`

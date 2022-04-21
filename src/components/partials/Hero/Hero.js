@@ -13,7 +13,7 @@ import SocialMedia from "./SocialMedia";
 
 const Hero = () => {
   return (
-    <HeroWrapper className="hero-background">
+    <HeroWrapper id="hero">
       <SocialMedia/>
       <Container>
         <HeroTag>

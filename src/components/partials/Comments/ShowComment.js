@@ -12,9 +12,9 @@ import {
 const ShowComment = (props) => {
   return (
     <CommentBoxWrapper>
-      {props.comments.map((comment) => {
+      {props.comments.map((comment, index) => {
         return (
-          <CommentBox>
+          <CommentBox key={index}>
             <CommentImage>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

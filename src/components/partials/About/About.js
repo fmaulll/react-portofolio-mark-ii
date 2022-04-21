@@ -19,7 +19,7 @@ import {
 
 const About = () => {
   return (
-    <AboutWrapper>
+    <AboutWrapper id="about">
       <Container>
         <AboutTitle>About Me</AboutTitle>
         <AboutContainer>

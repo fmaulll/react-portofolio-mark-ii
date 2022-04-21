@@ -4,6 +4,7 @@ import {
   CommentContainer,
   CommentTitle,
   CommentWrapper,
+  FetchInfo,
   LoadCommentButton,
 } from "../../styled";
 import AddComment from "./AddComment";
@@ -68,18 +69,18 @@ const Comment = () => {
   let loadButtonShow = <LoadCommentButton onClick={loadCommentHandler}>
   Load Comment!
 </LoadCommentButton>;
-  let comment = <p>No Comment Found.</p>;
+  let comment = <FetchInfo>No Comment Found.</FetchInfo>;
 
   if (getComment.length > 0) {
     comment = <ShowComment comments={getComment} />;
   }
 
   if (error) {
-    comment = <p>{error}</p>;
+    comment = <FetchInfo>{error}</FetchInfo>;
   }
 
   if (isLoading) {
-    comment = <p>Loading..</p>;
+    comment = <FetchInfo>Loading..</FetchInfo>;
   }
 
   return (

@@ -11,7 +11,7 @@ export const HeroWrapper = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(-135deg, #fff903 70%, #f5ea04 30%), #fff700;
+  background: linear-gradient(-135deg, #1c1c1c 70%, #262626 30%), #fff700;
   @media (max-width: 768px) {
     justify-content: center;
   }
@@ -20,7 +20,7 @@ export const HeroWrapper = styled.div`
 export const HeroTag = styled.div`
   width: 800px;
   padding: 50px;
-  box-shadow: -8px 8px 5px black;
+  box-shadow: -8px 8px 0 black;
   background: linear-gradient(-135deg, transparent 5%, #00f0ff 5%);
   color: black;
 
@@ -66,7 +66,7 @@ export const HeroButton = styled.button``;
 export const AboutWrapper = styled.div`
   width: 100%;
   padding-bottom: 50px;
-  background: linear-gradient(60deg, crimson 65%, #cf0c33 35%), black;
+  background: linear-gradient(-40deg, #cf0c33 65%, crimson 35%), black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,8 +115,8 @@ export const AboutImage = styled.img`
 export const AboutTag = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #00f0ff;
-  border: 5px solid black;
+  background: linear-gradient(-135deg, transparent 5%, #00f0ff 5%);
+  box-shadow: -8px 8px 0 black;
   padding: 30px;
   transition: 0.25s;
   
@@ -139,7 +139,7 @@ export const SkillBox = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #00f0ff;
-  border: 5px solid black;
+  box-shadow: -8px 8px 0 black;
   @media (max-width: 768px) {
     margin-left: 0;
     margin-top: 10px;
@@ -169,7 +169,8 @@ export const SkillDescription = styled.p`
   `;
 
 export const CommentWrapper = styled.div`
-  background: linear-gradient(-135deg, #fff903 60%, #f5ea04 40%), #fff700;
+  background: linear-gradient(-135deg, #262626 60%, #1c1c1c 40%), #fff700;
+  padding-bottom: 30px;
   `;
 
 export const CommentContainer = styled.div`
@@ -183,7 +184,7 @@ export const CommentContainer = styled.div`
 export const CommentTitle = styled.div`
   font-family: "blender_probold";
   font-size: 32px;
-  color: black;
+  color: white;
   margin: 20px 0;
 `;
 
@@ -193,7 +194,7 @@ export const LoadCommentButton = styled.div`
   background-color: #00f0ff;
   padding: 10px;
   border: 5px solid black;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   transition: 0.25s;
   color: black;
   cursor: pointer;
@@ -205,12 +206,14 @@ export const LoadCommentButton = styled.div`
 
 export const CommentBoxWrapper = styled.div`
   width: 100%;
+  margin-bottom: 10px;
 `;
 
 export const CommentBox = styled.div`
   display: flex;
   align-items: center;
-  background: linear-gradient(-45deg, transparent 3%, crimson 3%);
+  background: linear-gradient(-135deg, transparent 3%, crimson 3%);
+  box-shadow: -8px 8px 0 black;
   padding: 10px;
   margin-bottom: 10px;
   width: 100%;
@@ -235,10 +238,10 @@ export const CommentDescription = styled.div`
 
 export const CommentForm = styled.form`
   width: 100%;
-  background-color: #00f0ff;
-  border: 5px solid black;
+  background: linear-gradient(-135deg, transparent 5%, #00f0ff 5%);
+  box-shadow: -8px 8px 0 black;
   padding: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 `;
 
 export const CommentFormControl = styled.div`
@@ -269,7 +272,21 @@ export const CommentFormButton = styled.button`
   font-family: "blender_probold";
   font-size: 24px;
   text-align: center;
-  background-color: #fff903;
-  border: 5px solid black;
   padding: 10px;
+  transition: 0.25s;
+  background-color: white;
+  color: black;
+  border: 5px solid black;
+  
+  &:hover {
+    background-color: black;
+    color: white;
+    border: 5px solid white;
+
+  }
 `;
+
+export const FetchInfo = styled.div`
+color: white;
+margin-bottom: 10px;
+`
