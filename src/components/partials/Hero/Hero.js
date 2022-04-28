@@ -7,9 +7,11 @@ import {
   HeroTagInnerContainer,
   HeroTitle,
   HeroWrapper,
+  LineHero,
+  TinyTitle,
 } from "../../styled";
-import HeroNavigation from "./HeroNavigation";
 import SocialMedia from "./SocialMedia";
+import Line from "../../assets/line.png"
 
 const Hero = () => {
   return (
@@ -25,6 +27,10 @@ const Hero = () => {
             <HeroDescription>I am a Front-end Developer</HeroDescription>
           </HeroTagInnerContainer>
         </HeroTag>
+        <TinyTitle>
+          About
+        </TinyTitle>
+        <LineHero src={Line} />
       </Container>
     </HeroWrapper>
   );

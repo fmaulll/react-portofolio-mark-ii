@@ -59,5 +59,6 @@ const SocialMediaSvg = styled.svg`
   fill: #00f0ff;
   &:hover {
     fill: white;
+    filter: drop-shadow(0px 0px 8px white);
   }
 `;

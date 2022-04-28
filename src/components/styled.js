@@ -4,6 +4,39 @@ export const BlenderPro = styled.div`
   font-family: "blender_probold";
 `;
 
+export const LineHero = styled.img`
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  width: 10px;
+  height: 30px;
+  transform: translate(50%, 0);
+  @media (max-width: 768px) {
+    height: 30px;
+  }
+`;
+export const LineAbout = styled.img`
+  position: absolute;
+  top: 0;
+  right: 50%;
+  width: 10px;
+  height: 100%;
+  transform: translate(50%, 0);
+  z-index: 1;
+  @media (max-width: 768px) {
+    height: 50px;
+  }
+`;
+
+export const TinyTitle = styled.div`
+  position: absolute;
+  bottom: 30px;
+  right: 50%;
+  transform: translate(50%, 0);
+  font-family: "blender_probook";
+  color: white;
+`;
+
 export const HeroWrapper = styled.div`
   position: relative;
   font-family: "blender_probook";
@@ -20,7 +53,7 @@ export const HeroWrapper = styled.div`
 export const HeroTag = styled.div`
   width: 800px;
   padding: 50px;
-  box-shadow: -8px 8px 0 black;
+  box-shadow: -8px 8px 2px rgb(0 0 0 / 0.4);
   background: linear-gradient(-135deg, transparent 5%, #00f0ff 5%);
   color: black;
 
@@ -64,6 +97,7 @@ export const HeroDescription = styled.p`
 export const HeroButton = styled.button``;
 
 export const AboutWrapper = styled.div`
+  position: relative;
   width: 100%;
   padding-bottom: 50px;
   background: linear-gradient(-40deg, #cf0c33 65%, crimson 35%), black;
@@ -78,14 +112,15 @@ export const AboutTitle = styled.div`
   font-size: 32px;
   color: white;
   margin: 20px 0;
+  z-index: 10;
   @media (max-width: 768px) {
     font-size: 32px;
   }
-  `;
+`;
 
 export const AboutContainer = styled.div`
   display: flex;
-  `;
+`;
 
 export const AboutContent = styled.div`
   display: flex;
@@ -93,45 +128,61 @@ export const AboutContent = styled.div`
   justify-content: center;
   width: 100%;
   flex-direction: column;
+  flex: 1;
+  margin-right: 20px;
   @media (max-width: 768px) {
+    margin-right: 0;
     flex-direction: column;
   }
   `;
 
+export const DownloadCV = styled.a`
+  font-family: "blender_probook";
+  text-decoration: none;
+  background: linear-gradient(90deg, #5f55af 50%, #453d83 50%), black;
+  color: white;
+  margin-bottom: 10px;
+  width: fit-content;
+  padding: 5px 15px;
+  box-shadow: -4px 4px 2px rgb(0 0 0 / 0.4);
+  &:hover {
+    color: white;
+    background: linear-gradient(-90deg, #5f55af 50%, #453d83 50%), black;
+
+  }
+`;
+
 export const AboutImageContainer = styled.div`
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   @media (max-width: 768px) {
     display: none;
   }
-  `;
+`;
 
 export const AboutImage = styled.img`
-  padding: 0 150px 100px 150px;
-  fill: white;
-  `;
+  width: 300px;
+  filter: drop-shadow(-8px 8px 2px rgb(0 0 0 / 0.4));
+`;
 
 export const AboutTag = styled.div`
   display: flex;
   flex-direction: column;
   background: linear-gradient(-135deg, transparent 5%, #00f0ff 5%);
-  box-shadow: -8px 8px 0 black;
+  box-shadow: -8px 8px 2px rgb(0 0 0 / 0.4);
   padding: 30px;
-  transition: 0.25s;
-  
-  &:hover {
-    background-color: white;
-  }
+
   @media (max-width: 768px) {
     margin-right: 0;
   }
-  `;
+`;
 
 export const AboutDescription = styled.p`
   font-family: "blender_probook";
   font-size: 20px;
-  `;
+`;
 
 export const SkillBox = styled.div`
   margin-top: 20px;
@@ -139,39 +190,40 @@ export const SkillBox = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #00f0ff;
-  box-shadow: -8px 8px 0 black;
+  box-shadow: -8px 8px 2px rgb(0 0 0 / 0.4);
   @media (max-width: 768px) {
     margin-left: 0;
     margin-top: 10px;
   }
-  `;
+`;
 export const SkillContent = styled.div``;
 
 export const SkillTitle = styled.h3`
   font-family: "blender_probold";
-  `;
+`;
 
 export const SkillSpan = styled.span`
   font-family: "blender_probook";
   color: crimson;
   font-style: italic;
   opacity: 0.8;
-  `;
+`;
 
 export const SkillGrid = styled.div`
   display: grid;
   column-gap: 50px;
   grid-template-columns: repeat(3, 1fr);
-  `;
+`;
 
 export const SkillDescription = styled.p`
   font-family: "blender_probook";
-  `;
+`;
 
 export const CommentWrapper = styled.div`
   background: linear-gradient(-135deg, #262626 60%, #1c1c1c 40%), #fff700;
   padding-bottom: 30px;
-  `;
+  min-height: 100vh;
+`;
 
 export const CommentContainer = styled.div`
   display: flex;
@@ -189,18 +241,21 @@ export const CommentTitle = styled.div`
 `;
 
 export const LoadCommentButton = styled.div`
-  font-family: "blender_probold";
+  margin: 20px;
+  font-family: "blender_probook";
+  text-decoration: none;
+  background: linear-gradient(90deg, #5f55af 50%, #453d83 50%), black;
+  color: white;
+  width: fit-content;
+  padding: 10px 20px;
+  box-shadow: -6px 6px 2px rgb(0 0 0 / 0.4);
+  border: none;
   font-size: 24px;
-  background-color: #00f0ff;
-  padding: 10px;
-  border: 5px solid black;
-  margin-bottom: 30px;
-  transition: 0.25s;
-  color: black;
   cursor: pointer;
-
   &:hover {
-    background-color: white;
+    color: white;
+    background: linear-gradient(-90deg, #5f55af 50%, #453d83 50%), black;
+
   }
 `;
 
@@ -213,7 +268,7 @@ export const CommentBox = styled.div`
   display: flex;
   align-items: center;
   background: linear-gradient(-135deg, transparent 3%, crimson 3%);
-  box-shadow: -8px 8px 0 black;
+  box-shadow: -8px 8px 2px rgb(0 0 0 / 0.4);
   padding: 10px;
   margin-bottom: 10px;
   width: 100%;
@@ -239,7 +294,7 @@ export const CommentDescription = styled.div`
 export const CommentForm = styled.form`
   width: 100%;
   background: linear-gradient(-135deg, transparent 5%, #00f0ff 5%);
-  box-shadow: -8px 8px 0 black;
+  box-shadow: -8px 8px 2px rgb(0 0 0 / 0.4);
   padding: 30px;
   margin-bottom: 30px;
 `;
@@ -269,24 +324,23 @@ export const CommentFormTextArea = styled.textarea`
 
 export const CommentFormButton = styled.button`
   margin-top: 10px;
-  font-family: "blender_probold";
-  font-size: 24px;
-  text-align: center;
-  padding: 10px;
-  transition: 0.25s;
-  background-color: white;
-  color: black;
-  border: 5px solid black;
-  
+  font-family: "blender_probook";
+  text-decoration: none;
+  background: linear-gradient(90deg, #5f55af 50%, #453d83 50%), black;
+  color: white;
+  margin-bottom: 10px;
+  width: fit-content;
+  padding: 10px 20px;
+  box-shadow: -4px 4px 2px rgb(0 0 0 / 0.4);
+  border: none;
   &:hover {
-    background-color: black;
     color: white;
-    border: 5px solid white;
+    background: linear-gradient(-90deg, #5f55af 50%, #453d83 50%), black;
 
   }
 `;
 
 export const FetchInfo = styled.div`
-color: white;
-margin-bottom: 10px;
-`
+  color: white;
+  margin-bottom: 10px;
+`;

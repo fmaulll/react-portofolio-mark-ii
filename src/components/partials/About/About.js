@@ -15,12 +15,17 @@ import {
   AboutImageContainer,
   AboutImage,
   SkillSpan,
+  LineAbout,
+  DownloadCV,
 } from "../../styled";
+import Line from "../../assets/line.png";
+import Coding from "../../assets/coding.png";
 
 const About = () => {
   return (
     <AboutWrapper id="about">
       <Container>
+        <LineAbout src={Line} />
         <AboutTitle>About Me</AboutTitle>
         <AboutContainer>
           <AboutContent>
@@ -31,6 +36,21 @@ const About = () => {
                 on deepen my skills in web development such as front-end and
                 back-end to achieve my goal to become a full stack developer.
               </AboutDescription>
+              <DownloadCV
+                href="https://drive.google.com/file/d/1n2hr93yYjuCLZSEBSDhMgo5J0WdIpYAE/view?usp=sharing"
+                target="_blank"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  style={{ marginRight: "5px", fill: "white" }}
+                >
+                  <path d="M12 21l-8-9h6v-12h4v12h6l-8 9zm9-1v2h-18v-2h-2v4h22v-4h-2z" />
+                </svg>
+                Download CV!
+              </DownloadCV>
             </AboutTag>
             <SkillBox>
               <SkillContent>
@@ -71,7 +91,7 @@ const About = () => {
             </SkillBox>
           </AboutContent>
           <AboutImageContainer>
-            <AboutImage src="https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2021/png/iconmonstr-bed-5.png&r=255&g=255&b=255" />
+            <AboutImage src={Coding} />
           </AboutImageContainer>
         </AboutContainer>
       </Container>

@@ -84,7 +84,7 @@ const Comment = () => {
   }
 
   return (
-    <CommentWrapper>
+    <CommentWrapper id="comment">
       <Container>
         <CommentContainer>
           <CommentTitle>Leave a Comment for Fikri!</CommentTitle>

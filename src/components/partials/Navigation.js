@@ -5,15 +5,13 @@ import { BlenderPro } from "../styled";
 import { Link as LinkS, animateScroll as scroll } from "react-scroll";
 
 const Navigation = () => {
-  const topScrollHandler = () => {
-    scroll.scrollToTop();
-  }
-
   return (
     <BlenderPro>
       <Navbar fixed="top" variant="dark" bg="black" expand="lg">
         <Container>
-          <NavBrand to="hero">fmaulll</NavBrand>
+          <NavBrand to="hero" spy={true} exact="true" activeClass="active">
+            fmaulll
+          </NavBrand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -21,9 +19,32 @@ const Navigation = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <NavLink to="about" offset={-60}>About</NavLink>
-              <NavLink to="project">Project</NavLink>
-              <NavLink to="comment">Comment</NavLink>
+              <NavLink
+                to="about"
+                offset={-60}
+                spy={true}
+                exact="true"
+                activeClass="active"
+              >
+                About
+              </NavLink>
+              <NavLink
+                to="project"
+                offset={-50}
+                spy={true}
+                exact="true"
+                activeClass="active"
+              >
+                Project
+              </NavLink>
+              <NavLink
+                to="comment"
+                offset={-60}
+                spy={true}
+                activeClass="active"
+              >
+                Comment
+              </NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -68,10 +89,15 @@ const NavBrand = styled(LinkS)`
   cursor: pointer;
   &:hover {
     color: white;
+    filter: drop-shadow(0px 0px 8px white);
+  }
+  &.active {
+    border-bottom: 3px solid white;
   }
 `;
 
 const NavLink = styled(LinkS)`
+  border-bottom: 3px solid transparent;
   padding: 5px 0;
   margin: 0 15px;
   font-size: 24px;
@@ -82,8 +108,9 @@ const NavLink = styled(LinkS)`
   cursor: pointer;
   &:hover {
     color: white;
+    filter: drop-shadow(0px 0px 8px white);
   }
-  &:active {
+  &.active {
     border-bottom: 3px solid white;
   }
   @media (max-width: 768px) {
