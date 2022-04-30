@@ -1,9 +1,11 @@
 import React, { useCallback, useState } from "react";
 import { Container } from "react-bootstrap";
+import  Fade  from "react-reveal/Fade";
 import {
   CommentContainer,
   CommentTitle,
   CommentWrapper,
+  ErrorContainer,
   FetchInfo,
   LoadCommentButton,
 } from "../../styled";
@@ -60,15 +62,17 @@ const Comment = () => {
     const data = await response.json();
     fetchCommentHandler();
   }
-  
+
   const loadCommentHandler = () => {
     fetchCommentHandler();
     setLoadButton(false);
-  }
+  };
 
-  let loadButtonShow = <LoadCommentButton onClick={loadCommentHandler}>
-  Load Comment!
-</LoadCommentButton>;
+  let loadButtonShow = (
+    <LoadCommentButton onClick={loadCommentHandler}>
+      Load Comment!
+    </LoadCommentButton>
+  );
   let comment = <FetchInfo>No Comment Found.</FetchInfo>;
 
   if (getComment.length > 0) {
@@ -76,7 +80,12 @@ const Comment = () => {
   }
 
   if (error) {
-    comment = <FetchInfo>{error}</FetchInfo>;
+    comment = (
+      <ErrorContainer>
+        {loadButtonShow}
+        <FetchInfo>{error}</FetchInfo>;
+      </ErrorContainer>
+    );
   }
 
   if (isLoading) {
@@ -86,12 +95,14 @@ const Comment = () => {
   return (
     <CommentWrapper id="comment">
       <Container>
-        <CommentContainer>
-          <CommentTitle>Leave a Comment for Fikri!</CommentTitle>
-          <AddComment onAddComment={addCommentHandler} />
-          {loadButton ? loadButtonShow : ""}
-          {comment}
-        </CommentContainer>
+        {/* <Fade top cascade> */}
+          <CommentContainer>
+            <CommentTitle>Leave a Comment for Fikri!</CommentTitle>
+            <AddComment onAddComment={addCommentHandler} />
+            {loadButton ? loadButtonShow : ""}
+            {comment}
+          </CommentContainer>
+        {/* </Fade> */}
       </Container>
     </CommentWrapper>
   );

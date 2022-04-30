@@ -7,31 +7,36 @@ import {
   HeroTagInnerContainer,
   HeroTitle,
   HeroWrapper,
+  JuniorSpan,
   LineHero,
+  StyledContainer,
   TinyTitle,
 } from "../../styled";
 import SocialMedia from "./SocialMedia";
-import Line from "../../assets/line.png"
+import Line from "../../assets/line.png";
+import Fade from "react-reveal/Fade";
 
 const Hero = () => {
   return (
     <HeroWrapper id="hero">
-      <SocialMedia/>
-      <Container>
-        <HeroTag>
-          <HeroTagInnerContainer>
-            <HeroTitle>
-              Fikri Maulana Ibrahim
-              <HeroHr />
-            </HeroTitle>
-            <HeroDescription>I am a Front-end Developer</HeroDescription>
-          </HeroTagInnerContainer>
-        </HeroTag>
-        <TinyTitle>
-          About
-        </TinyTitle>
+      <SocialMedia />
+      <StyledContainer>
+        {/* <Fade bottom> */}
+          <HeroTag>
+            <HeroTagInnerContainer>
+              <HeroTitle>
+                Fikri Maulana Ibrahim
+                <HeroHr />
+              </HeroTitle>
+              <HeroDescription>
+                I am a <JuniorSpan>(Entry Level)</JuniorSpan> Frontend Developer
+              </HeroDescription>
+            </HeroTagInnerContainer>
+          </HeroTag>
+        {/* </Fade> */}
+        <TinyTitle>About</TinyTitle>
         <LineHero src={Line} />
-      </Container>
+      </StyledContainer>
     </HeroWrapper>
   );
 };

@@ -1,28 +1,31 @@
 import React from "react";
+import Slide from "react-reveal/Slide";
 import styled from "styled-components";
 import { imagesSource } from "../../../data/social-link";
 
 const SocialMedia = () => {
   return (
     <SocialMediaWrapper>
-      <SocialMediaContainer>
-        {imagesSource.map((image, index) => {
-          return (
-            <SocialMediaItem key={index}>
-              <a href={image.link} target="_blank">
-                <SocialMediaSvg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                >
-                  <path d={image.source} />
-                </SocialMediaSvg>
-              </a>
-            </SocialMediaItem>
-          );
-        })}
-      </SocialMediaContainer>
+      <Slide right>
+        <SocialMediaContainer>
+          {imagesSource.map((image, index) => {
+            return (
+              <SocialMediaItem key={index}>
+                <a href={image.link} target="_blank">
+                  <SocialMediaSvg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d={image.source} />
+                  </SocialMediaSvg>
+                </a>
+              </SocialMediaItem>
+            );
+          })}
+        </SocialMediaContainer>
+      </Slide>
     </SocialMediaWrapper>
   );
 };

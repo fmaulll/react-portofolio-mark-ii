@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import {
+  CommentAlert,
   CommentForm,
   CommentFormButton,
   CommentFormControl,
@@ -11,6 +12,7 @@ import {
 const AddComment = (props) => {
   const [getNameValue, setNameValue] = useState("");
   const [getCommentValue, setCommentValue] = useState("");
+  const [emptyComment, setEmptyComment] = useState(false)
   const nameRef = useRef();
   const commentRef = useRef();
 
@@ -23,7 +25,8 @@ const AddComment = (props) => {
 
   const submitCommentHandler = (event) => {
     if (getCommentValue === "") {
-      alert("comment can't be empty!");
+      // alert("comment can't be empty!");
+      setEmptyComment(true)
       event.preventDefault();
     } else {
       const comment = {
@@ -37,6 +40,8 @@ const AddComment = (props) => {
     }
   };
 
+  const emptyMessage = <CommentAlert>Comment cannot be empty!</CommentAlert>
+
   return (
     <CommentForm onSubmit={submitCommentHandler}>
       <CommentFormControl>
@@ -48,11 +53,14 @@ const AddComment = (props) => {
           onChange={nameChangeHandler}
           ref={nameRef}
           placeholder="insert your name (can be empty tho, it'll become anonymous)"
-        />
+          />
       </CommentFormControl>
       <CommentFormControl>
         <CommentFormLabel htmlFor="comment">Comment</CommentFormLabel>
+        {emptyComment ? emptyMessage : ""}
         <CommentFormTextArea
+          onClick={() => setEmptyComment(false)}
+          emptyComment={emptyComment}
           id="comment"
           value={getCommentValue}
           onChange={commentChangeHandler}

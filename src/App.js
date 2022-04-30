@@ -1,17 +1,29 @@
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import Loader from "./components/Loader";
 import Main from "./components/Main";
 import Footer from "./components/partials/Footer";
 import Navigation from "./components/partials/Navigation";
 
 function App() {
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, []);
   return (
     <>
-      <Router>
-        <Navigation />
-        <Main />
-        <Footer />
-      </Router>
+      {loading ? (
+        <Loader onLoading={loading} />
+      ) : (
+        <div>
+          <Navigation />
+          <Main />
+          <Footer />
+        </div>
+      )}
     </>
   );
 }
