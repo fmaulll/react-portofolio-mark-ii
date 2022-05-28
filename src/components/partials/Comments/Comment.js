@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { Container } from "react-bootstrap";
-import  Fade  from "react-reveal/Fade";
+import Fade from "react-reveal/Fade";
 import {
   CommentContainer,
   CommentTitle,
@@ -9,6 +9,7 @@ import {
   FetchInfo,
   LoadCommentButton,
 } from "../../styled";
+import styled from "styled-components";
 import AddComment from "./AddComment";
 import ShowComment from "./ShowComment";
 
@@ -55,7 +56,8 @@ const Comment = () => {
         method: "POST",
         body: JSON.stringify(comment),
         headers: {
-          "Content-Type": "application/json",
+          "Content-type": "application/json",
+          "Accept": "application/json",
         },
       }
     );
@@ -94,18 +96,23 @@ const Comment = () => {
 
   return (
     <CommentWrapper id="comment">
-      <Container>
-        {/* <Fade top cascade> */}
+      <StyledContainer>
+        <Fade left>
           <CommentContainer>
             <CommentTitle>Leave a Comment for Fikri!</CommentTitle>
             <AddComment onAddComment={addCommentHandler} />
             {loadButton ? loadButtonShow : ""}
             {comment}
           </CommentContainer>
-        {/* </Fade> */}
-      </Container>
+        </Fade>
+      </StyledContainer>
     </CommentWrapper>
   );
 };
 
 export default Comment;
+
+const StyledContainer = styled(Container)`
+  overflow-y: hidden;
+  height: auto;
+`;

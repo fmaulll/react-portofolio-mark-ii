@@ -2,14 +2,16 @@ import styled from "styled-components";
 import HeroBackground from "./assets/background.png";
 import AboutBackground from "./assets/aboutbackground.png";
 import { AiOutlineDownload } from "react-icons/ai";
+
+import { FaUserCircle } from "react-icons/fa";
 import { Container } from "react-bootstrap";
 
-export const StyledContainer= styled(Container)`
-height: 100%;
-display: flex;
-align-items: center;
-overflow-y: hidden;
-`
+export const StyledContainer = styled(Container)`
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow-y: hidden;
+`;
 
 export const BlenderPro = styled.div`
   font-family: "blender_probold";
@@ -68,9 +70,11 @@ export const HeroTag = styled.div`
   display: flex;
   max-width: 800px;
   padding: 50px;
-  box-shadow: -8px 8px 2px rgb(0 0 0 / 0.4);
   background: linear-gradient(-135deg, transparent 5%, #00f0ff 5%);
   color: black;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  box-shadow: -8px 8px 2px rgb(0 0 0 / 0.4);
 
   @media (max-width: 768px) {
     /* margin-left: 8px; */
@@ -82,7 +86,7 @@ export const HeroTag = styled.div`
 export const HeroTagInnerContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin:0 20px;
+  margin: 0 20px;
   @media (max-width: 768px) {
     margin-left: 15px;
   }
@@ -144,7 +148,7 @@ export const AboutWrapper = styled.div`
   color: black;
 `;
 export const AboutTitle = styled.div`
-  text-align: start;
+text-align: center;
   font-family: "blender_probold";
   font-size: 32px;
   color: white;
@@ -214,17 +218,19 @@ export const AboutTag = styled.div`
   padding-right: 70px;
   color: white;
   width: fit-content;
-  
+  margin-left: 8px;
+  margin-bottom: 8px;
+
   @media (max-width: 768px) {
     margin-right: 0;
   }
-  `;
+`;
 
 export const AboutDescription = styled.p`
   font-family: "blender_probook";
   font-size: 20px;
   max-width: 700px;
-  `;
+`;
 
 export const SkillBox = styled.div`
   margin-top: 20px;
@@ -236,13 +242,14 @@ export const SkillBox = styled.div`
   -webkit-backdrop-filter: blur(11.8px);
   box-shadow: -8px 8px 2px rgb(0 0 0 / 0.4);
   color: white;
+  margin-left: 8px;
+  margin-bottom: 8px;
   @media (max-width: 768px) {
-    margin-left: 0;
     margin-top: 10px;
   }
 `;
 export const SkillContent = styled.div`
-margin-bottom: 10px;
+  margin-bottom: 10px;
 `;
 
 export const SkillTitle = styled.h4`
@@ -268,8 +275,12 @@ export const SkillDescription = styled.p`
 
 export const CommentWrapper = styled.div`
   background: linear-gradient(-135deg, #262626 60%, #1c1c1c 40%), #fff700;
+  width: 100%;
   padding-bottom: 30px;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ErrorContainer = styled.div`
@@ -327,11 +338,16 @@ export const CommentBox = styled.div`
   width: 100%;
 `;
 
-export const CommentImage = styled.div`
+export const CommentImageWrapper = styled.div``;
+
+export const CommentImage = styled(FaUserCircle)`
+  color: black;
   margin-right: 10px;
 `;
 
 export const CommentContent = styled.div`
+  margin-left: 10px;
+  width: 100%;
   color: black;
 `;
 
@@ -351,12 +367,13 @@ export const CommentForm = styled.form`
     transparent 5%,
     rgba(255, 255, 255, 0.07) 5%
   );
-  backdrop-filter: blur(11.8px);
-  -webkit-backdrop-filter: blur(11.8px);
-  box-shadow: -8px 8px 2px rgb(0 0 0 / 0.4);
+  backdrop-filter: blur(10.1px);
+  -webkit-backdrop-filter: blur(10.1px);
+  box-shadow: -16px 8px 2px rgb(0 0 0 / 0.4);
   color: white;
   padding: 30px;
   margin-bottom: 30px;
+  margin-left: 16px;
 `;
 
 export const CommentFormControl = styled.div`

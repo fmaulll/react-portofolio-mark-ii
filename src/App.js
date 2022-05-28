@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Loader from "./components/Loader";
 import Main from "./components/Main";
-import Footer from "./components/partials/Footer";
-import Navigation from "./components/partials/Navigation";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -14,17 +13,11 @@ function App() {
     }, 3000);
   }, []);
   return (
-    <>
-      {loading ? (
-        <Loader onLoading={loading} />
-      ) : (
-        <div>
-          <Navigation />
-          <Main />
-          <Footer />
-        </div>
-      )}
-    </>
+    <Router>
+        <Routes>
+          <Route path="/" element={loading ? <Loader onLoading={loading} /> : <Main />} />
+        </Routes>
+    </Router>
   );
 }
 

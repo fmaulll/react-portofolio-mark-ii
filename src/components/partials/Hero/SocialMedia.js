@@ -52,6 +52,11 @@ const SocialMediaContainer = styled.div`
 const SocialMediaItem = styled.div`
   margin: 15px 20px;
 
+  transition: 0.25s;
+  &:hover {
+    fill: white;
+    filter: drop-shadow(0px 0px 8px white);
+  }
   @media (max-width: 768px) {
     display: none;
   }
@@ -62,6 +67,5 @@ const SocialMediaSvg = styled.svg`
   fill: #00f0ff;
   &:hover {
     fill: white;
-    filter: drop-shadow(0px 0px 8px white);
   }
-`;
+  `;

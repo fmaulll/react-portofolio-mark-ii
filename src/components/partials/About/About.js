@@ -24,7 +24,7 @@ const About = () => {
       <Container>
         <AboutContainer>
           <AboutContent>
-            {/* <Fade left cascade> */}
+            <Fade left cascade>
               <AboutTitle>About Me</AboutTitle>
               <AboutTag>
                 <AboutDescription>
@@ -79,7 +79,7 @@ const About = () => {
                   </SkillGrid>
                 </SkillContent>
               </SkillBox>
-            {/* </Fade> */}
+            </Fade>
           </AboutContent>
         </AboutContainer>
       </Container>

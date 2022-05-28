@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import styled from "styled-components";
 import { BlenderPro } from "../styled";
+import { Link as LinkR } from "react-router-dom";
 import { Link as LinkS } from "react-scroll";
 import { BiMenuAltRight } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
@@ -73,6 +74,9 @@ const Navigation = () => {
           >
             Comment
           </NavLink>
+          <NavLinkSecret href="https://cekih.vercel.app">
+            Cekih
+          </NavLinkSecret>
         </MobileNavbarContainer>
       </Container>
     </MobileNavbarWrapper>
@@ -201,7 +205,9 @@ const HamburgerMenu = styled(BiMenuAltRight)`
 `;
 const CloseMenu = styled(IoClose)``;
 
-const MobileNavbarWrapper = styled.div``;
+const MobileNavbarWrapper = styled.div`
+max-height: 80px;
+`;
 const MobileNavbarContainer = styled.div`
   display: flex;
   /* justify-content: center; */
@@ -267,6 +273,29 @@ const NavBrand = styled(LinkS)`
 `;
 
 const NavLink = styled(LinkS)`
+  border-bottom: 3px solid transparent;
+  padding: 5px 0;
+  margin: 0 15px;
+  font-size: 24px;
+  font-family: "blender_probold";
+  text-decoration: none;
+  color: white;
+  transition: 0.25s;
+  cursor: pointer;
+  &:hover {
+    color: white;
+    filter: drop-shadow(0px 0px 8px white);
+  }
+  &.active {
+    border-bottom: 3px solid white;
+  }
+  @media (max-width: 768px) {
+    padding: 0;
+    text-align: center;
+    margin: 2px 0;
+  }
+`;
+const NavLinkSecret = styled.a`
   border-bottom: 3px solid transparent;
   padding: 5px 0;
   margin: 0 15px;

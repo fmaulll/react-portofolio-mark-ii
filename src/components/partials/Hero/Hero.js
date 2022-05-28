@@ -21,7 +21,7 @@ const Hero = () => {
     <HeroWrapper id="hero">
       <SocialMedia />
       <StyledContainer>
-        {/* <Fade bottom> */}
+        <Fade bottom>
           <HeroTag>
             <HeroTagInnerContainer>
               <HeroTitle>
@@ -33,7 +33,7 @@ const Hero = () => {
               </HeroDescription>
             </HeroTagInnerContainer>
           </HeroTag>
-        {/* </Fade> */}
+        </Fade>
         <TinyTitle>About</TinyTitle>
         <LineHero src={Line} />
       </StyledContainer>
